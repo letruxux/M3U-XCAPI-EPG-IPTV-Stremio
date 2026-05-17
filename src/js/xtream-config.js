@@ -9,6 +9,7 @@
     return;
   }
 
+  const playlistNameInput = document.getElementById("playlistName");
   const xtreamUrlInput = document.getElementById("xtreamUrl");
   const userInput = document.getElementById("xtreamUsername");
   const pwdInput = document.getElementById("xtreamPassword");
@@ -193,6 +194,7 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const playlistName = playlistNameInput.value.trim();
     const baseUrlRaw = xtreamUrlInput.value.trim();
     const baseUrl = normalizedBaseUrl(baseUrlRaw);
     const username = userInput.value.trim();
@@ -356,6 +358,8 @@
         enableEpg: enableEpgFinal,
         debug: debug || undefined,
       };
+
+      if (playlistName) config.playlistName = playlistName;
 
       if (xtreamUseM3UChk && xtreamUseM3UChk.checked) {
         config.xtreamUseM3U = true;

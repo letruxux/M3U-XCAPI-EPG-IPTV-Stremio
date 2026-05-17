@@ -24,6 +24,11 @@
         <fieldset>
             <legend>Playlist Source</legend>
             <div class="form-group">
+                <label for="playlistName">Playlist Name</label>
+                <input type="text" id="playlistName" name="playlistName" placeholder="My IPTV Playlist">
+                <small class="hint">Optional name shown in Stremio (defaults to "M3U/EPG TV Addon").</small>
+            </div>
+            <div class="form-group">
                 <label for="m3uUrl">M3U Playlist URL <span class="req">*</span></label>
                 <input type="url" id="m3uUrl" name="m3uUrl" required placeholder="https://example.com/playlist.m3u">
                 <small class="hint">HTTP(S) only. If the playlist requires credentials include them in the URL or use Xtream mode.</small>

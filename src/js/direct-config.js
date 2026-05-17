@@ -7,6 +7,7 @@
         return;
     }
 
+    const playlistNameInput = document.getElementById('playlistName');
     const m3uInput       = document.getElementById('m3uUrl');
     const epgInput       = document.getElementById('epgUrl');
     const enableEpgChk   = document.getElementById('enableEpg');
@@ -134,6 +135,7 @@
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        const playlistName = playlistNameInput.value.trim();
         const m3uUrl = m3uInput.value.trim();
         const enableEpgInitial = enableEpgChk.checked;
         const epgUrl = epgInput.value.trim();
@@ -218,6 +220,7 @@
                 enableEpg: enableEpgFinal,
                 debug: debug || undefined
             };
+            if (playlistName) config.playlistName = playlistName;
             if (enableEpgFinal && epgUrl) config.epgUrl = epgUrl;
             if (isFinite(epgOffsetHours) && epgOffsetHours !== 0) config.epgOffsetHours = epgOffsetHours;
 

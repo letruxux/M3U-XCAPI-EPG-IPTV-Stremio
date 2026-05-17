@@ -613,7 +613,7 @@ async function createAddon(config) {
     const manifest = {
         id: ADDON_ID,
         version: "2.0.0",
-        name: ADDON_NAME,
+        name: config.playlistName || ADDON_NAME,
         description: "IPTV addon (M3U / EPG / Xtream) with encrypted configs, caching & series support (Xtream + Direct)",
         resources: ["catalog", "stream", "meta"],
         types: ["tv", "movie", "series"],
